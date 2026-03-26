@@ -175,21 +175,10 @@ level: 2
 
 **Objectif :** ajouter Prometheus + Grafana + Loki à l'application fil rouge
 
-```bash
-cd formation-devops/05-observability/
-
-# Démarrer la stack applicative + monitoring
-docker compose -f docker-compose.yml \
-               -f docker-compose.monitoring.yml up -d
-
-# Accès aux outils :
-# Grafana    → http://localhost:3000  (admin / admin)
-# Prometheus → http://localhost:9090
-# Loki       → http://localhost:3100
-```
+Voir https://github.com/mathieulaude/formation-devops > src/05-observability
 
 **À explorer :**
-1. Générer du trafic sur l'API : `curl -X GET http://localhost:3001/api/items`
+1. Générer du trafic sur l'API : `watch curl -X GET http://localhost:3001/api/items`
 2. Observer les métriques HTTP dans Prometheus
 3. Lire les logs structurés dans Grafana → Loki
 4. Créer une alerte sur le taux d'erreur HTTP > 1%
